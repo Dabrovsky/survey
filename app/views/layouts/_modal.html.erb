@@ -1,0 +1,7 @@
+<%= turbo_frame_tag "modal" do %>
+  <div class="modal" data-controller="modal" data-modal-target="modal" data-action="keyup@window->modal#closeWithKeyboard click@window->modal#closeOnBackground">
+    <div class="modal__content" data-modal-target="content">
+      <%= yield %>
+    </div>
+  </div>
+<% end %>

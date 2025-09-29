@@ -1,1 +1,102 @@
 @import "tailwindcss";
+
+@layer components {
+  .container {
+    @apply 2xl:!max-w-7xl;
+  }
+}
+
+/* ALERT COMPONENT */
+@layer components {
+  .alert {
+    @apply fixed flex items-center bottom-5 right-10 p-5 rounded-sm text-xs text-white mx-auto w-8/12 md:w-4/12 xl:w-3/12 2xl:w-2/12;
+  }
+
+  .alert__icon {
+    @apply w-4 h-4 mr-2 fill-current text-white;
+  }
+
+  .alert--danger {
+    @apply bg-red-500;
+  }
+
+  .alert--danger .alert__close {
+    @apply text-red-200;
+  }
+
+  .alert--success {
+    @apply bg-green-500;
+  }
+
+  .alert--success .alert__close {
+    @apply text-green-200;
+  }
+
+  .alert--failed {
+    @apply bg-red-500;
+  }
+
+  .alert--unset {
+    position: unset;
+  }
+}
+
+/* MODAL COMPONENT */
+@layer components {
+  .modal {
+    @apply fixed inset-0 overflow-y-auto flex items-center justify-center;
+    background: rgba(100, 100, 100, 0.6);
+    z-index: 9999;
+  }
+
+  .modal__content {
+    @apply m-1 bg-white rounded-sm shadow p-8 min-w-[500px];
+  }
+
+  .modal__header {
+    @apply relative flex justify-between items-start pb-6;
+  }
+
+  .modal__title {
+    @apply text-xl capitalize;
+  }
+
+  .modal__message {
+    @apply text-sm text-gray-600 text-center px-12;
+  }
+
+  .modal__footer {
+    @apply flex items-center flex-wrap gap-2 mt-8;
+  }
+
+  .modal__close {
+    @apply absolute top-0 right-0 p-1;
+  }
+}
+
+/* FORM COMPONENT */
+@layer components {
+  .form__row {
+    @apply flex -mx-1 pt-2;
+  }
+
+  .form__control {
+    @apply px-1;
+  }
+
+  .form__label {
+    @apply self-start block mb-2 text-xs text-gray-500;
+  }
+
+  .form__input {
+    @apply w-full outline-none p-3 text-xs text-black border border-gray-400 placeholder-gray-500 rounded focus:border-sky-600;
+  }
+
+  .form .field_with_errors .form__label {
+    @apply text-red-400;
+  }
+
+  .form .field_with_errors .form__input {
+    @apply border-red-400;
+  }
+}

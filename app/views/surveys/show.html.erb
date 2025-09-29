@@ -1,0 +1,18 @@
+<div class="relative overflow-x-auto py-6 px-4 space-y-4 2xl:px-0">
+  <div class="flex items-center justify-between gap-2 flex-col xl:flex-row">
+    <%= render partial: "breadcrumbs" %>
+    <div class="flex items-center gap-2">
+      <%= link_to "Nowa Ankieta", new_survey_path, class: "py-2 px-4 inline-flex items-center gap-x-2 text-xs font-medium rounded border border-transparent bg-blue-100 text-blue-800 cursor-pointer hover:bg-blue-200", data: { turbo_frame: "modal" } %>
+      <%= link_to "Edytuj", edit_survey_path(@survey), class: "py-2 px-4 inline-flex items-center gap-x-2 text-xs font-medium rounded border border-transparent bg-orange-100 text-orange-800 cursor-pointer hover:bg-orange-200", data: { turbo_frame: "modal" } %>
+      <%= button_to "Usuń", survey_path(@survey), class: "py-2 px-4 inline-flex items-center gap-x-2 text-xs font-medium rounded border border-transparent bg-red-100 text-red-800 cursor-pointer hover:bg-red-200", method: :delete, data: { turbo_confirm: t("confirm_destroy") } %>
+    </div>
+  </div>
+
+  <div class="bg-white text-sm flex flex-col gap-1 border border-gray-300 p-6">
+    <div>Nazwa: <%= @survey.full_name %></div>
+    <div>Wiek (L): <%= @survey.age %></div>
+    <div>Wzrost (CM): <%= @survey.height %></div>
+    <div>Płeć: <%= t("ankieta.genders.#{@survey.gender}") %></div>
+    <div>Ulubiony kolor: <%= @survey.favorite_color %></div>
+  </div>
+</div>
