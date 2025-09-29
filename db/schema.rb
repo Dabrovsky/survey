@@ -10,5 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 0) do
+ActiveRecord::Schema[7.2].define(version: 2025_09_29_105444) do
+  create_table "surveys", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.integer "age", null: false
+    t.integer "height", null: false
+    t.string "gender", null: false
+    t.string "favorite_color", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 end
