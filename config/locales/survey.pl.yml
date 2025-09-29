@@ -1,0 +1,6 @@
+pl:
+  survey:
+    genders:
+      male: Mężczyzna
+      female: Kobieta
+      other: Inna

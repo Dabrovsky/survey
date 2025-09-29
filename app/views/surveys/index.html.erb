@@ -1,0 +1,10 @@
+<div class="relative overflow-x-auto py-6 px-4 space-y-4 2xl:px-0">
+  <div class="flex justify-end gap-2">
+    <%= link_to "Odśwież listę", entries_surveys_path, class: "py-2 px-4 inline-flex items-center gap-x-2 text-xs font-medium rounded border border-transparent bg-blue-100 text-blue-800 cursor-pointer hover:bg-blue-200", data: { turbo_frame: "survey_entries", turbo_prefetch: false } %>
+    <%= link_to "Nowa Ankieta", new_survey_path, class: "py-2 px-4 inline-flex items-center gap-x-2 text-xs font-medium rounded border border-transparent bg-blue-100 text-blue-800 cursor-pointer hover:bg-blue-200", data: { turbo_frame: "modal" } %>
+  </div>
+
+  <div class="border border-gray-300">
+    <%= render partial: "surveys", locals: { surveys: @surveys } %>
+  </div>
+</div>

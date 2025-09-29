@@ -29,4 +29,8 @@ class Survey < ApplicationRecord
   end
 
   normalizes :first_name, :last_name, with: -> { it.squish.capitalize }
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

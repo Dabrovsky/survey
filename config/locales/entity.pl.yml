@@ -1,0 +1,4 @@
+pl:
+  entity:
+    succeed_message: Dane zostały zapisane poprawnie
+    failed_message: Wystąpił błąd
