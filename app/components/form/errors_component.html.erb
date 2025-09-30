@@ -1,0 +1,13 @@
+<div class="alert alert--danger alert--unset min-w-full animated faster delay fade-in">
+  <% if messages.size < 2 %>
+    <div class="w-full text-left">
+      <%= messages&.first %>
+    </div>
+  <% else %>
+    <ul class="list-disc w-full pl-4">
+      <% messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
