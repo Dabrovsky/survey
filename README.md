@@ -10,8 +10,8 @@ Users can browse and manage surveys in a minimal interface.
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
   - [Environment Setup](#environment-setup)
-  - [Clone the Repository](#clone-the-repository)
   - [Run Locally](#run-locally)
+  - [Clone the Repository](#clone-the-repository)
 - [Access](#access)
 
 ## Prerequisites
