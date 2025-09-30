@@ -1,0 +1,21 @@
+<% if any? %>
+  <div class="alert alert--<%= type %> animated faster delay fade-in" data-controller="alert">
+    <div class="flex items-center w-full">
+      <% if failed? %>
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" class="alert__icon">
+          <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z" />
+        </svg>
+      <% else %>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="alert__icon">
+          <polygon points="0 11 2 9 7 14 18 3 20 5 7 18"></polygon>
+        </svg>
+      <% end %>
+      <%= message %>
+    </div>
+    <button class="alert__close cursor-pointer" data-action="alert#close">
+      <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+        <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+      </svg>
+    </button>
+  </div>
+<% end %>

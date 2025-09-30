@@ -1,0 +1,13 @@
+<nav class="text-sm" aria-label="Breadcrumbs">
+  <ul class="flex">
+    <%= safe_join(items.map do |item|
+      content_tag :li, class: "font-normal flex items-center" do
+        if item[:path].present?
+          link_to item[:title], item[:path], class: "font-medium hover:underline flex items-center"
+        else
+          item[:title]
+        end
+      end
+    end, separator) %>
+  </ul>
+</nav>

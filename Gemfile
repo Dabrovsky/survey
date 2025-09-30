@@ -14,6 +14,7 @@ gem "sqlite3", ">= 1.4"
 gem "stimulus-rails"
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i(windows jruby)
+gem "view_component"
 
 group :development, :test do
   gem "annotate"

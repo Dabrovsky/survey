@@ -1,14 +1,14 @@
 <div class="flex justify-between items-center even:bg-gray-50 odd:bg-white hover:bg-blue-50 py-3 px-4">
   <div>
     <div class="font-medium text-gray-900 whitespace-nowrap">
-      <%= link_to survey.full_name, survey_path(survey), class: "hover:text-sky-800", data: { turbo: false } %>
+      <%= render LinkToComponent.new(survey.full_name, survey_path(survey), custom_css: "hover:text-sky-800", data: { turbo: false }) %>
     </div>
     <div class="text-xs text-gray-500">
       Wiek: <%= survey.age %>, Wzrost: <%= survey.height %>, Płeć: <%= t("survey.genders.#{survey.gender}") %>
     </div>
   </div>
   <div class="flex items-center justify-end gap-2">
-    <%= link_to "Edytuj", edit_survey_path(survey), class: "py-2 px-4 inline-flex items-center gap-x-2 text-xs font-medium rounded border border-transparent bg-orange-100 text-orange-800 cursor-pointer hover:bg-orange-200", data: { turbo_frame: "modal" } %>
-    <%= button_to "Usuń", survey_path(survey), class: "py-2 px-4 inline-flex items-center gap-x-2 text-xs font-medium rounded border border-transparent bg-red-100 text-red-800 cursor-pointer hover:bg-red-200", method: :delete, data: { turbo_confirm: t("confirm_destroy") } %>
+    <%= render LinkToComponent.new("Edytuj", edit_survey_path(survey), color: "orange", data: { turbo_frame: "modal" }) %>
+    <%= render ButtonToComponent.new("Usuń", survey_path(survey), color: "red", data: { turbo_confirm: t("confirm_destroy") }) %>
   </div>
 </div>
