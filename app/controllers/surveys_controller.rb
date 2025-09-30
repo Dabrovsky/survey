@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class SurveysController < ApplicationController
-  before_action :set_survey, only: %i(show edit update destroy)
+  before_action :set_survey, only: %i(show edit destroy)
 
   def index
     @surveys = fetch_surveys
@@ -19,25 +19,29 @@ class SurveysController < ApplicationController
   end
 
   def create
-    @survey = Survey.new(survey_params)
+    command = Surveys::Create.call(**survey_params)
 
-    if @survey.save
+    if command.success?
       redirect_to surveys_path, succeed_message
     else
-      render failed_response(@survey), status: :unprocessable_entity
+      render failed_response(command.value), status: :unprocessable_entity
     end
   end
 
   def update
-    if @survey.update(survey_params)
+    command = Surveys::Update.call(survey_id:, **survey_params)
+
+    if command.success?
       redirect_to surveys_path, succeed_message
     else
-      render failed_response(@survey), status: :unprocessable_entity
+      render failed_response(command.value), status: :unprocessable_entity
     end
   end
 
   def destroy
-    if @survey.destroy
+    command = Surveys::Destroy.call(survey_id:)
+
+    if command.success?
       redirect_to surveys_path, succeed_message
     else
       redirect_to surveys_path, failed_message
@@ -54,12 +58,16 @@ class SurveysController < ApplicationController
 
   private
 
+  def survey_id
+    params[:id]
+  end
+
   def set_survey
-    @survey = Survey.find(params[:id])
+    @survey = Survey.find(survey_id)
   end
 
   def fetch_surveys
-    Survey.all
+    Surveys::List.call.value
   end
 
   def survey_params
