@@ -11,8 +11,7 @@ Users can browse and manage surveys in a minimal interface.
 - [Getting Started](#getting-started)
   - [Environment Setup](#environment-setup)
   - [Run Locally](#run-locally)
-  - [Clone the Repository](#clone-the-repository)
-- [Access](#access)
+  - [Access](#access)
 
 ## Prerequisites
 
@@ -74,7 +73,7 @@ gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 \
 # Install RVM
 \curl -sSL https://get.rvm.io | bash -s stable
 
-# Reload RVM in the current shell
+# Reload RVM in the current shell or restart the terminal
 source ~/.rvm/scripts/rvm
 
 # Verify RVM installation
